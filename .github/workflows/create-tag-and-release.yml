@@ -6,7 +6,7 @@ on:
 
 jobs:
   setup-build-deploy:
-    name: create tag and release file
+    name: Setup, Build, and Deploy
     runs-on: ubuntu-latest
     permissions:
       packages: write
