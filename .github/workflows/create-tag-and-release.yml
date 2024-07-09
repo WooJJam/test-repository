@@ -19,9 +19,12 @@ jobs:
       id: tag_version
       uses: mathieudutour/github-tag-action@v6.1 
       with:
+        github_token: ${{ secrets.GITHUB_TOKEN }} 
+        default_bump: patch
+        release_branches: main, develop
         custom_release_rules: |
           release:major,
-          feat:minor:Features!!,
+          feat:major:Features!!,
           refactor:minor:Refactoring,
           fix:patch:Bug Fixes,
           hotfix:patch:Hotfixes,
@@ -33,7 +36,6 @@ jobs:
           chore:patch:Chores,
           revert:patch:Reverts,
           infra:patch:Infra
-        github_token: ${{ secrets.GITHUB_TOKEN }} 
 
     - name: Create a GitHub release
       uses: ncipollo/release-action@v1 
