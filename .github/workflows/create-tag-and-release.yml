@@ -35,9 +35,7 @@ jobs:
             test:patch:Tests,
             ci:patch:Continuous Integration,
             chore:patch:Chores,
-            revert:patch:Reverts,
-            infra:patch:Infra
-          
+            revert:patch:Reverts,          
 
       - name: Create a GitHub release
         uses: ncipollo/release-action@v1 
