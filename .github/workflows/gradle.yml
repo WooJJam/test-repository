@@ -1,4 +1,4 @@
-name: Java Continuous Integration with Gradle
+name: Java Continuous Integration with Gradle !
 
 on:
   push:
