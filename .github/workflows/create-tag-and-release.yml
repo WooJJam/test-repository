@@ -31,7 +31,7 @@ jobs:
           test:patch:Tests,
           ci:patch:Continuous Integration,
           chore:patch:Chores,
-          revert:patch:Reverts
+          revert:patch:Reverts,
           infra:patch:Infra
         github_token: ${{ secrets.GITHUB_TOKEN }} 
 
