@@ -21,7 +21,7 @@ jobs:
       with:
         custom_release_rules: |
           release:major,
-          feat:minor:Features,
+          feat:minor:Features!!,
           refactor:minor:Refactoring,
           fix:patch:Bug Fixes,
           hotfix:patch:Hotfixes,
