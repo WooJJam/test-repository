@@ -37,7 +37,7 @@ jobs:
             ci:patch:Continuous Integration,
             chore:patch:Chores,
             revert:patch:Reverts,
-            infa:patch:Infra
+            infra:patch:Infra
           
 
       - name: Create a GitHub release
