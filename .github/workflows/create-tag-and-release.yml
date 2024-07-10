@@ -1,4 +1,4 @@
-name: github action create tag, release
+name: github action create tag and release
 on:
   push:
     branches:
