@@ -38,7 +38,7 @@ jobs:
       - name: Output all tag version outputs as JSON
         run: |
           echo '${{ toJson(steps.tag_version.outputs) }}'
-          echo '${{ toJson(steps.tag_version) }}'
+          echo '${{ toJson(steps) }}'
           
       - name: Create a GitHub release       
         uses: ncipollo/release-action@v1
