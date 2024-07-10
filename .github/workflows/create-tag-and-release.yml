@@ -16,6 +16,16 @@ jobs:
     steps:
       - name: Create Tag And Release
         uses: actions/checkout@v4
+
+      - name: Output tag version information
+        run: |
+          echo "New Tag: ${{ steps.tag_version.outputs.new_tag }}"
+          echo "New Version: ${{ steps.tag_version.outputs.new_version }}"
+          echo "Previous Tag: ${{ steps.tag_version.outputs.previous_tag }}"
+          echo "Previous Version: ${{ steps.tag_version.outputs.previous_version }}"
+          echo "Release Type: ${{ steps.tag_version.outputs.release_type }}"
+          echo "Changelog: ${{ steps.tag_version.outputs.changelog }}"
+          echo "steps.tag_version : ${{ steps.tag_version.outputs }}
       
       - name: Bump version and push tag
         id: tag_version
@@ -24,22 +34,10 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }} 
           default_bump: patch
           release_branches: main, develop
-          custom_release_rules: |
-            release:major,
-            feat:minor:Features,
-            refactor:minor:Refactoring,
-            fix:patch:Bug Fixes,
-            hotfix:patch:Hotfixes,
-            docs:patch:Documentation,
-            style:patch:Styles,
-            perf:patch:Performance Improvements,
-            test:patch:Tests,
-            ci:patch:Continuous Integration,
-            chore:patch:Chores,
-            revert:patch:Reverts,          
+          custom_release_rules: release:major, feat:minor:Features, refactor:minor:Refactoring, fix:patch:Bug Fixes, hotfix:patch:Hotfixes, docs:patch:Documentation, style:patch:Styles, perf:patch:Performance Improvements, test:patch:Tests, ci:patch:Continuous Integration, chore:patch:Chores, revert:patch:Reverts
 
-      - name: Create a GitHub release
-        uses: ncipollo/release-action@v1 
+      - name: Create a GitHub release       
+        uses: ncipollo/release-action@v1
         with:
           tag: ${{ steps.tag_version.outputs.new_tag }}
           name: Release ${{ steps.tag_version.outputs.new_tag }}
