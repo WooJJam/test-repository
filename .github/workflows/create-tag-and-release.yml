@@ -34,7 +34,9 @@ jobs:
           echo "Previous Version: ${{ steps.tag_version.outputs.previous_version }}"
           echo "Release Type: ${{ steps.tag_version.outputs.release_type }}"
           echo "Changelog: ${{ steps.tag_version.outputs.changelog }}"
-          echo "steps.tag_version : ${{ steps.tag_version.outputs }}"
+
+      - name: Output all tag version outputs as JSON
+        run: echo '${{ toJson(steps.tag_version.outputs) }}'
           
       - name: Create a GitHub release       
         uses: ncipollo/release-action@v1
