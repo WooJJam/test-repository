@@ -25,7 +25,7 @@ jobs:
           echo "Previous Version: ${{ steps.tag_version.outputs.previous_version }}"
           echo "Release Type: ${{ steps.tag_version.outputs.release_type }}"
           echo "Changelog: ${{ steps.tag_version.outputs.changelog }}"
-          echo "steps.tag_version : ${{ steps.tag_version.outputs }}
+          echo "steps.tag_version : ${{ steps.tag_version.outputs }}"
       
       - name: Bump version and push tag
         id: tag_version
