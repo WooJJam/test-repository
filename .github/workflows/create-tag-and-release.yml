@@ -23,7 +23,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }} 
           default_bump: patch
-          release_branches: main, develop.*
+          release_branches: main,develop.*
           custom_release_rules: release:major, feat:minor:Features, refactor:minor:Refactoring, fix:patch:Bug Fixes, hotfix:patch:Hotfixes, docs:patch:Documentation, style:patch:Styles, perf:patch:Performance Improvements, test:patch:Tests, ci:patch:Continuous Integration, chore:patch:Chores, revert:patch:Reverts
 
       - name: Output tag version information
