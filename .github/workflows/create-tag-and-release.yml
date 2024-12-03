@@ -23,8 +23,8 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }} 
           default_bump: patch
-          release_branches: main, develop
-          custom_release_rules: release:major, feat:minor:Features, refactor:minor:Refactoring, fix:patch:Bug Fixes, hotfix:patch:Hotfixes, docs:patch:Documentation, style:patch:Styles, perf:patch:Performance Improvements, test:patch:Tests, ci:patch:Continuous Integration, chore:patch:Chores, revert:patch:Reverts
+          release_branches: main,develop.*
+          custom_release_rules: release:major,feat:minor:Features!,refactor:minor:Refactoring,fix:patch:Bug Fixes,hotfix:patch:Hotfixes,docs:patch:Documentation,style:patch:Styles,perf:patch:Performance Improvements,test:patch:Tests,ci:patch:Continuous Integration,chore:patch:Chores,revert:patch:Reverts,infra:patch:Infra!
 
       - name: Output tag version information
         run: |
@@ -44,5 +44,5 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           tag: ${{ steps.tag_version.outputs.new_tag }}
-          name: Release ${{ steps.tag_version.outputs.new_tag }}
-          body: ${{ steps.tag_version.outputs.changelog_section }}
+          name: Sponjy ${{ steps.tag_version.outputs.new_tag }}
+          body: ${{ steps.tag_version.outputs.changelog }}
