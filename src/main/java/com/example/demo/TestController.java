@@ -11,13 +11,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping
 public class TestController {
 
-	@GetMapping
 	public ResponseEntity test() {
 		log.info("commit 1");
 		log.info("commit 2");
 		log.info("commit 3");
 		log.info("commit 4");
 		log.info("commit 5");
+		return ResponseEntity.ok("Success!");
+	}
+
+	public ResponseEntity test2() {
+		log.info("commit 6");
 		return ResponseEntity.ok("Success!");
 	}
 }
