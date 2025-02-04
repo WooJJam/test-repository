@@ -14,6 +14,7 @@ public class TestController {
 	@GetMapping
 	public ResponseEntity test() {
 		log.info("commit 1");
+		log.info("commit 2");
 		return ResponseEntity.ok("Success!");
 	}
 }
