@@ -22,6 +22,7 @@ public class TestController {
 
 	public ResponseEntity test2() {
 		log.info("commit 6");
+		log.info("commit 7");
 		return ResponseEntity.ok("Success!");
 	}
 }
