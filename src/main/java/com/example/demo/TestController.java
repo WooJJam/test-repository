@@ -41,8 +41,6 @@ public class TestController {
 		log.info("commit 18");
 		log.info("commit 19");
 		log.info("commit 20");
-		log.info("test");
-		log.info("foce push");
 		return ResponseEntity.ok("Success!");
 	}
 }
